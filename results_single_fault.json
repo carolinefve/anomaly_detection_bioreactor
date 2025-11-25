@@ -1,14 +1,14 @@
 {
   "test_stream": "single_fault",
   "counts": {
-    "tp": 0,
-    "fp": 0,
-    "tn": 0,
+    "tp": 203,
+    "fp": 1213,
+    "tn": 308,
     "fn": 0
   },
   "metrics": {
-    "precision": 0,
-    "recall": 0,
-    "f1_score": 0
+    "precision": 0.14336158192090395,
+    "recall": 1.0,
+    "f1_score": 0.25077208153180974
   }
 }
