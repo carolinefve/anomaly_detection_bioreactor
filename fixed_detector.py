@@ -142,6 +142,7 @@ def on_message(client, userdata, msg):
             training_data["rpm"].append(rpm_val)
             
             print(f"Collecting training data... {len(training_data['temperature'])} / {TRAINING_SAMPLES}", end="\n")
+            
 
             if len(training_data["temperature"]) >= TRAINING_SAMPLES:
                 print("\nTRAINING COMPLETE")
@@ -205,8 +206,7 @@ def on_message(client, userdata, msg):
             alarm_status = "!! ALARM !!" if alarm_is_active else "Normal"
             truth_status = "FAULT" if is_fault_present else "Normal"
             
-            print(f"Score: {pooled_score:.2f} | Detector: {alarm_status} | Truth: {truth_status} | "
-                  f"TP: {scores['tp']} FP: {scores['fp']} TN: {scores['tn']} FN: {scores['fn']}", end="\n")
+            print(f"Score: {pooled_score:.2f} | T_Z: {temp_z:.1f} pH_Z: {ph_z:.1f} RPM_Z: {rpm_z:.1f} | Status: {alarm_status} | Truth: {truth_status}", end="\n")
 
     except Exception as e:
         print(f"Error processing message: {e}")
